@@ -196,6 +196,8 @@
             this.Controls.Add(this.numOfPlayers);
             this.Controls.Add(this.mapLabel);
             this.Controls.Add(this.playerLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Valorant Strat Roulette";
             this.ResumeLayout(false);
