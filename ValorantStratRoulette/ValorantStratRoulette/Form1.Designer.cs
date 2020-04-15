@@ -109,7 +109,6 @@
             "Omen"});
             this.heroList.Location = new System.Drawing.Point(12, 125);
             this.heroList.Name = "heroList";
-            this.heroList.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.heroList.Size = new System.Drawing.Size(120, 214);
             this.heroList.TabIndex = 4;
             // 
@@ -149,7 +148,7 @@
             "Judge",
             "Bulldog",
             "Guardian",
-            "Pantom",
+            "Phantom",
             "Vandal",
             "Marshal",
             "Operator",
