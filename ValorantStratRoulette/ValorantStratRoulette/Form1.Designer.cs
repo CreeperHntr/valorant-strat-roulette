@@ -38,6 +38,7 @@
             this.weaponsList = new System.Windows.Forms.CheckedListBox();
             this.output = new System.Windows.Forms.TextBox();
             this.randomizeBtn = new System.Windows.Forms.Button();
+            this.creditsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // playerLabel
@@ -70,8 +71,7 @@
             "2",
             "3",
             "4",
-            "5",
-            "10"});
+            "5"});
             this.numOfPlayers.Location = new System.Drawing.Point(161, 12);
             this.numOfPlayers.Name = "numOfPlayers";
             this.numOfPlayers.Size = new System.Drawing.Size(87, 28);
@@ -167,6 +167,7 @@
             this.output.Multiline = true;
             this.output.Name = "output";
             this.output.ReadOnly = true;
+            this.output.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.output.Size = new System.Drawing.Size(355, 390);
             this.output.TabIndex = 8;
             this.output.WordWrap = false;
@@ -176,16 +177,29 @@
             this.randomizeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.randomizeBtn.Location = new System.Drawing.Point(12, 355);
             this.randomizeBtn.Name = "randomizeBtn";
-            this.randomizeBtn.Size = new System.Drawing.Size(405, 47);
+            this.randomizeBtn.Size = new System.Drawing.Size(294, 47);
             this.randomizeBtn.TabIndex = 9;
             this.randomizeBtn.Text = "Randomize";
             this.randomizeBtn.UseVisualStyleBackColor = true;
+            this.randomizeBtn.Click += new System.EventHandler(this.randomizeBtn_Click);
+            // 
+            // creditsBtn
+            // 
+            this.creditsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creditsBtn.Location = new System.Drawing.Point(312, 355);
+            this.creditsBtn.Name = "creditsBtn";
+            this.creditsBtn.Size = new System.Drawing.Size(105, 47);
+            this.creditsBtn.TabIndex = 10;
+            this.creditsBtn.Text = "Credits";
+            this.creditsBtn.UseVisualStyleBackColor = true;
+            this.creditsBtn.Click += new System.EventHandler(this.creditsBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 414);
+            this.Controls.Add(this.creditsBtn);
             this.Controls.Add(this.randomizeBtn);
             this.Controls.Add(this.output);
             this.Controls.Add(this.weaponsList);
@@ -217,6 +231,7 @@
         private System.Windows.Forms.CheckedListBox weaponsList;
         private System.Windows.Forms.TextBox output;
         private System.Windows.Forms.Button randomizeBtn;
+        private System.Windows.Forms.Button creditsBtn;
     }
 }
 
