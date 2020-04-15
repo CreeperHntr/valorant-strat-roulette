@@ -44,7 +44,7 @@
             // 
             this.playerLabel.AutoSize = true;
             this.playerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerLabel.Location = new System.Drawing.Point(13, 13);
+            this.playerLabel.Location = new System.Drawing.Point(14, 14);
             this.playerLabel.Name = "playerLabel";
             this.playerLabel.Size = new System.Drawing.Size(142, 20);
             this.playerLabel.TabIndex = 0;
