@@ -18,7 +18,6 @@ namespace ValorantStratRoulette
         List<String> weaponPool = new List<String>();
         List<String> heroPool = new List<String>();
         List<String> strats = new List<String>();
-        List<String> rand = new List<String>();
 
         List<String> outputList = new List<String>();
 
@@ -43,7 +42,6 @@ namespace ValorantStratRoulette
             heroPool.Clear();
             weaponPool.Clear();
             strats.Clear();
-            rand.Clear();
             shuffledHeroPool.Clear();
             shuffledWeaponPool.Clear();
             shuffledStratsPool.Clear();
@@ -60,32 +58,57 @@ namespace ValorantStratRoulette
 
             heroPool = GetSelectedItems(heroList);
 
+            // checks the size of the selected heroes vs the player count
             if (playerCount > heroPool.Count)
             {
                 MessageBox.Show("Please increase the number of heroes available");
                 return;
             }
 
+            // adds the selected weapons to the weapon pool
             weaponPool = GetSelectedItems(weaponsList);
 
+            // sets the map to the selected map
             map = mapSelected.GetItemText(mapSelected.SelectedItem);
 
+            // not sure if this works?
             if(map == null) { return; }
 
+            // adds the strats based on the selected map
             strats = GetStrats(map);
 
             try
             {
                 BuildOutput();
                 PrintOutput();
-            } catch(Exception f)
+            } 
+            catch(Exception f)
             {
-                MessageBox.Show("Some value was out of range.\nPlease try fixing your selection and rondomize again.");
+                MessageBox.Show("Some value was out of range.\nPlease try fixing your selection and randomize again.");
                 return;
             }
 
             
         }
+
+        private void creditsBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Developed by: CreeperHntr\n\n" +
+                "Valorant name and assets are property of Riot Games.\n\n" +
+                "My Social Links:\n" +
+                "------------------------------------------------------\n" +
+                "Twitch: https://twitch.tv/creeperhntr \n" +
+                "Twitter: https://twitter.com/creeperhntr");
+        }
+
+        /// -------------------------------------
+        /// 
+        /// PrintOutput()
+        /// 
+        /// Prints the output of the of the 
+        /// randomized strats
+        /// 
+        /// -------------------------------------
 
         private void PrintOutput()
         {
@@ -182,7 +205,8 @@ namespace ValorantStratRoulette
                 list.Add("C-Long");
                 list.Add("Mid to C");
                 list.Add("Mid to B");
-            } else if(map.Equals("Split") || map.Equals("Bind"))
+            } 
+            else if(map.Equals("Split") || map.Equals("Bind"))
             {
                 list.Add("B-Short");
                 list.Add("B-Long");
@@ -211,14 +235,5 @@ namespace ValorantStratRoulette
             return selected;
         }
 
-        private void creditsBtn_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Developed by: CreeperHntr\n\n" +
-                "Valorant name and assets are property of Riot Games.\n\n" +
-                "My Social Links:\n" +
-                "------------------------------------------------------\n" +
-                "Twitch: https://twitch.tv/creeperhntr \n" +
-                "Twitter: https://twitter.com/creeperhntr");
-        }
     }
 }
