@@ -8,25 +8,13 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
-		Release|x64 = Release|x64
-		Valorant Strat Roulette|Any CPU = Valorant Strat Roulette|Any CPU
-		Valorant Strat Roulette|x64 = Valorant Strat Roulette|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{96986D65-9870-44CF-B095-A6763F725D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{96986D65-9870-44CF-B095-A6763F725D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96986D65-9870-44CF-B095-A6763F725D50}.Debug|x64.ActiveCfg = Debug|x64
-		{96986D65-9870-44CF-B095-A6763F725D50}.Debug|x64.Build.0 = Debug|x64
 		{96986D65-9870-44CF-B095-A6763F725D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96986D65-9870-44CF-B095-A6763F725D50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96986D65-9870-44CF-B095-A6763F725D50}.Release|x64.ActiveCfg = Release|x64
-		{96986D65-9870-44CF-B095-A6763F725D50}.Release|x64.Build.0 = Release|x64
-		{96986D65-9870-44CF-B095-A6763F725D50}.Valorant Strat Roulette|Any CPU.ActiveCfg = Valorant Strat Roulette|Any CPU
-		{96986D65-9870-44CF-B095-A6763F725D50}.Valorant Strat Roulette|Any CPU.Build.0 = Valorant Strat Roulette|Any CPU
-		{96986D65-9870-44CF-B095-A6763F725D50}.Valorant Strat Roulette|x64.ActiveCfg = Valorant Strat Roulette|x64
-		{96986D65-9870-44CF-B095-A6763F725D50}.Valorant Strat Roulette|x64.Build.0 = Valorant Strat Roulette|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
