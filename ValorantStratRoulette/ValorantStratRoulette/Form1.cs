@@ -178,10 +178,19 @@ namespace ValorantStratRoulette
 
         private void BuildOutput()
         {
-            shuffledHeroPool = Randomize(heroPool);
-            shuffledWeaponPool = Randomize(weaponPool);
-            shuffledRoundOnePool = Randomize(sidearmPool);
-            shuffledStratsPool = Randomize(strats);
+            // init randomization
+            shuffledHeroPool = heroPool.OrderBy(x => random.Next()).ToList();
+            shuffledWeaponPool = weaponPool.OrderBy(x => random.Next()).ToList();
+            shuffledRoundOnePool = sidearmPool.OrderBy(x => random.Next()).ToList();
+            shuffledStratsPool = strats.OrderBy(x => random.Next()).ToList();
+
+            for (int i = 0; i < 9; i++)
+            {
+                shuffledHeroPool = shuffledHeroPool.OrderBy(x => random.Next()).ToList();
+                shuffledWeaponPool = shuffledWeaponPool.OrderBy(x => random.Next()).ToList();
+                shuffledRoundOnePool = shuffledRoundOnePool.OrderBy(x => random.Next()).ToList();
+                shuffledStratsPool = shuffledStratsPool.OrderBy(x => random.Next()).ToList();
+            }
 
             outputList.Add("Selected Map: " + map);
 
@@ -391,13 +400,15 @@ namespace ValorantStratRoulette
         /// Returns a list of all randomized 
         /// input weapon pools
         /// 
+        /// Removed due to causing seeded rng???
+        /// 
         /// -------------------------------------
 
-        private List<String> Randomize(List<String> input)
+        /*private List<String> Randomize(List<String> input)
         {
             List<String> list = new List<String>();
             list = input.OrderBy(x => random.Next()).ToList();
             return input;
-        }
+        }*/
     }
 }
