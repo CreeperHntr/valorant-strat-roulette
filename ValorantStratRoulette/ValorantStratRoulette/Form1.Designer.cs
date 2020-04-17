@@ -50,7 +50,7 @@
             this.riflesLabel = new System.Windows.Forms.Label();
             this.sniperLabel = new System.Windows.Forms.Label();
             this.sniperList = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.heavyList = new System.Windows.Forms.CheckedListBox();
             this.heavyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -317,18 +317,18 @@
             this.sniperList.Size = new System.Drawing.Size(100, 46);
             this.sniperList.TabIndex = 20;
             // 
-            // checkedListBox1
+            // heavyList
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.heavyList.CheckOnClick = true;
+            this.heavyList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.heavyList.FormattingEnabled = true;
+            this.heavyList.Items.AddRange(new object[] {
             "Marshal",
             "Operator"});
-            this.checkedListBox1.Location = new System.Drawing.Point(357, 370);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(100, 46);
-            this.checkedListBox1.TabIndex = 21;
+            this.heavyList.Location = new System.Drawing.Point(357, 370);
+            this.heavyList.Name = "heavyList";
+            this.heavyList.Size = new System.Drawing.Size(100, 46);
+            this.heavyList.TabIndex = 21;
             // 
             // heavyLabel
             // 
@@ -346,7 +346,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 505);
             this.Controls.Add(this.heavyLabel);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.heavyList);
             this.Controls.Add(this.sniperList);
             this.Controls.Add(this.sniperLabel);
             this.Controls.Add(this.riflesLabel);
@@ -401,7 +401,7 @@
         private System.Windows.Forms.Label riflesLabel;
         private System.Windows.Forms.Label sniperLabel;
         private System.Windows.Forms.CheckedListBox sniperList;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox heavyList;
         private System.Windows.Forms.Label heavyLabel;
     }
 }

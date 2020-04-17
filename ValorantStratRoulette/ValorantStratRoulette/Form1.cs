@@ -24,10 +24,19 @@ namespace ValorantStratRoulette
         List<String> heroPool = new List<String>();
         List<String> strats = new List<String>();
 
+        List<String> sidearmPool = new List<String>();
+        List<String> smgPool = new List<String>();
+        List<String> shotgunPool = new List<String>();
+        List<String> riflePool = new List<String>();
+        List<String> sniperPool = new List<String>();
+        List<String> heavyPool = new List<String>();
+
+
         List<String> outputList = new List<String>();
 
         List<String> shuffledHeroPool = new List<String>();
         List<String> shuffledWeaponPool = new List<String>();
+        List<String> shuffledRoundOnePool = new List<String>();
         List<String> shuffledStratsPool = new List<String>();
 
         Random random = new Random();
@@ -49,8 +58,17 @@ namespace ValorantStratRoulette
             strats.Clear();
             shuffledHeroPool.Clear();
             shuffledWeaponPool.Clear();
+            shuffledRoundOnePool.Clear();
             shuffledStratsPool.Clear();
             outputList.Clear();
+
+            sidearmPool.Clear();
+            smgPool.Clear();
+            shotgunPool.Clear();
+            riflePool.Clear();
+            sniperPool.Clear();
+            heavyPool.Clear();
+
 
             output.Text = "";
 
@@ -71,7 +89,17 @@ namespace ValorantStratRoulette
             }
 
             // adds the selected weapons to the weapon pool
-            weaponPool = GetSelectedItems(abilityShieldsList); /// this needs to be edited
+            //weaponPool = GetSelectedItems(abilityShieldsList); /// this needs to be edited
+
+            // Creation of the pools of weapons
+            sidearmPool = GetSelectedItems(sidearmsList);
+            smgPool = GetSelectedItems(smgsList);
+            shotgunPool = GetSelectedItems(shotgunList);
+            riflePool = GetSelectedItems(riflesList);
+            sniperPool = GetSelectedItems(sniperList);
+            heavyPool = GetSelectedItems(heavyList);
+
+            weaponPool = BuildFullWeaponPool(sidearmPool, smgPool, shotgunPool, riflePool, sniperPool, heavyPool);
 
             // sets the map to the selected map
             map = mapSelected.GetItemText(mapSelected.SelectedItem);
@@ -89,7 +117,8 @@ namespace ValorantStratRoulette
             } 
             catch(Exception f)
             {
-                MessageBox.Show("Some value was out of range.\nPlease try fixing your selection and randomize again.");
+                //MessageBox.Show("Some value was out of range.\nPlease try fixing your selection and randomize again.");
+                MessageBox.Show(f.ToString());
                 return;
             }
 
@@ -139,6 +168,7 @@ namespace ValorantStratRoulette
             {
                 shuffledHeroPool = heroPool.OrderBy(x => random.Next()).ToList();
                 shuffledWeaponPool = weaponPool.OrderBy(x => random.Next()).ToList();
+                shuffledRoundOnePool = sidearmPool.OrderBy(x => random.Next()).ToList();
                 shuffledStratsPool = strats.OrderBy(x => random.Next()).ToList();
             }
 
@@ -157,18 +187,14 @@ namespace ValorantStratRoulette
                 outputList.Add("\r\n");
             }
 
-            
-
-            
             outputList.Add("Randomized Strats:");
 
             int weaponIndex = 0;
             int stratIndex = 0;
+            int r1Index = 0;
 
             for(int i = 1; i < 27; i++)
             {
-                String weapon = "";
-                String strat = "";
                 
                 if(weaponIndex > shuffledWeaponPool.Count - 1)
                 {
@@ -180,11 +206,24 @@ namespace ValorantStratRoulette
                     stratIndex = 0;
                 }
 
+                if(r1Index > shuffledRoundOnePool.Count - 1)
+                {
+                    r1Index = 0;
+                }
 
+                if(i == 1 || i == 14)
+                {
+                    outputList.Add("Round " + i + ": " + shuffledRoundOnePool[r1Index] + ", " + shuffledStratsPool[stratIndex]);
+                } 
+                else
+                {
+                    outputList.Add("Round " + i + ": " + shuffledWeaponPool[weaponIndex] + ", " + shuffledStratsPool[stratIndex]);
+                }
 
-                outputList.Add("Round " + i + ": " + shuffledWeaponPool[weaponIndex] + ", " + shuffledStratsPool[stratIndex]);
+                
                 weaponIndex++;
                 stratIndex++;
+                r1Index++;
             }
         }
 
@@ -238,6 +277,48 @@ namespace ValorantStratRoulette
                 selected.Add(list.CheckedItems[i].ToString());
             }
             return selected;
+        }
+
+
+        /// -------------------------------------
+        /// 
+        /// BuildFullWeaponPool()
+        /// 
+        /// Returns a list of all selected weapons
+        /// from all item pools
+        /// 
+        /// -------------------------------------
+        
+        private List<String> BuildFullWeaponPool(List<String> sidearms, List<String> smgs, List<String> shotguns, List<String> rifles, List<String> snipers, List<String> heavy)
+        {
+            List<String> list = new List<String>();
+
+            for(int i = 0; i < sidearms.Count; i++)
+            {
+                list.Add(sidearms[i]);
+            }
+
+            for (int i = 0; i < smgs.Count; i++)
+            {
+                list.Add(smgs[i]);
+            }
+
+            for (int i = 0; i < shotguns.Count; i++)
+            {
+                list.Add(shotguns[i]);
+            }
+
+            for (int i = 0; i < rifles.Count; i++)
+            {
+                list.Add(rifles[i]);
+            }
+
+            for (int i = 0; i < heavy.Count; i++)
+            {
+                list.Add(heavy[i]);
+            }
+
+            return list;
         }
 
     }
