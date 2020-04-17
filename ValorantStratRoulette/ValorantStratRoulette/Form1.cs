@@ -99,7 +99,17 @@ namespace ValorantStratRoulette
             sniperPool = GetSelectedItems(sniperList);
             heavyPool = GetSelectedItems(heavyList);
 
-            weaponPool = BuildFullWeaponPool(sidearmPool, smgPool, shotgunPool, riflePool, sniperPool, heavyPool);
+            if(sidearmPool.Count == 0)
+            {
+                sidearmPool.Add("Classic");
+                weaponPool = BuildFullWeaponPool(sidearmPool, smgPool, shotgunPool, riflePool, sniperPool, heavyPool);
+            }
+            else
+            {
+                weaponPool = BuildFullWeaponPool(sidearmPool, smgPool, shotgunPool, riflePool, sniperPool, heavyPool);
+            }
+
+            
 
             // sets the map to the selected map
             map = mapSelected.GetItemText(mapSelected.SelectedItem);
