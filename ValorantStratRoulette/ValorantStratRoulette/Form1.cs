@@ -45,6 +45,8 @@ namespace ValorantStratRoulette
 
         private String map = null;
 
+        private bool isDefault = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -75,6 +77,7 @@ namespace ValorantStratRoulette
             playerCount = 0;
 
             map = null;
+            isDefault = false;
 
             // Alter vars for new values
             playerCount = numOfPlayers.SelectedIndex + 1;
@@ -102,7 +105,8 @@ namespace ValorantStratRoulette
             if(sidearmPool.Count == 0)
             {
                 sidearmPool.Add("Classic");
-                weaponPool = BuildFullWeaponPool(sidearmPool, smgPool, shotgunPool, riflePool, sniperPool, heavyPool);
+                isDefault = true;
+                weaponPool = BuildFullWeaponPool(smgPool, shotgunPool, riflePool, sniperPool, heavyPool);
             }
             else
             {
@@ -218,14 +222,29 @@ namespace ValorantStratRoulette
                     r1Index = 0;
                 }
 
-                if(i == 1 || i == 13)
+                if(isDefault)
                 {
-                    outputList.Add("Round " + i + ": " + shuffledRoundOnePool[r1Index] + ", " + shuffledStratsPool[stratIndex]);
-                } 
+                    if (i == 1 || i == 13)
+                    {
+                        outputList.Add("Round " + i + ": " + shuffledRoundOnePool[0] + ", " + shuffledStratsPool[stratIndex]);
+                    }
+                    else
+                    {
+                        outputList.Add("Round " + i + ": " + shuffledWeaponPool[weaponIndex] + ", " + shuffledStratsPool[stratIndex]);
+                    }
+                }
                 else
                 {
-                    outputList.Add("Round " + i + ": " + shuffledWeaponPool[weaponIndex] + ", " + shuffledStratsPool[stratIndex]);
+                    if (i == 1 || i == 13)
+                    {
+                        outputList.Add("Round " + i + ": " + shuffledRoundOnePool[r1Index] + ", " + shuffledStratsPool[stratIndex]);
+                    }
+                    else
+                    {
+                        outputList.Add("Round " + i + ": " + shuffledWeaponPool[weaponIndex] + ", " + shuffledStratsPool[stratIndex]);
+                    }
                 }
+                
 
                 
                 weaponIndex++;
@@ -304,6 +323,42 @@ namespace ValorantStratRoulette
             {
                 list.Add(sidearms[i]);
             }
+
+            for (int i = 0; i < smgs.Count; i++)
+            {
+                list.Add(smgs[i]);
+            }
+
+            for (int i = 0; i < shotguns.Count; i++)
+            {
+                list.Add(shotguns[i]);
+            }
+
+            for (int i = 0; i < rifles.Count; i++)
+            {
+                list.Add(rifles[i]);
+            }
+
+            for (int i = 0; i < heavy.Count; i++)
+            {
+                list.Add(heavy[i]);
+            }
+
+            return list;
+        }
+
+        /// -------------------------------------
+        /// 
+        /// BuildFullWeaponPool()
+        /// 
+        /// Returns a list of all selected weapons
+        /// from all item pools
+        /// 
+        /// -------------------------------------
+
+        private List<String> BuildFullWeaponPool(List<String> smgs, List<String> shotguns, List<String> rifles, List<String> snipers, List<String> heavy)
+        {
+            List<String> list = new List<String>();
 
             for (int i = 0; i < smgs.Count; i++)
             {
