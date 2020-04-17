@@ -171,7 +171,7 @@
             this.output.Name = "output";
             this.output.ReadOnly = true;
             this.output.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.output.Size = new System.Drawing.Size(333, 474);
+            this.output.Size = new System.Drawing.Size(378, 474);
             this.output.TabIndex = 8;
             this.output.WordWrap = false;
             // 
@@ -344,7 +344,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 505);
+            this.ClientSize = new System.Drawing.Size(860, 505);
             this.Controls.Add(this.heavyLabel);
             this.Controls.Add(this.heavyList);
             this.Controls.Add(this.sniperList);

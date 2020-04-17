@@ -275,22 +275,30 @@ namespace ValorantStratRoulette
         {
             List<String> list = new List<String>();
 
-            list.Add("A-Long");
-            list.Add("A-Short");
-
             if (map.Equals("Haven"))
             {
-                list.Add("C-Short");
+                list.Add("A-Short");
+                list.Add("A-Long");
                 list.Add("C-Long");
-                list.Add("Mid to C");
+                list.Add("Double Doors to C");
                 list.Add("Mid to B");
             } 
-            else if(map.Equals("Split") || map.Equals("Bind"))
+            else if(map.Equals("Split"))
             {
-                list.Add("B-Short");
+                list.Add("A-Main");
+                list.Add("A Ramp to A");
+                list.Add("A Ramp to B");
                 list.Add("B-Long");
                 list.Add("Mid to B");
                 list.Add("Mid to A");
+            }
+            else if(map.Equals("Bind"))
+            {
+                list.Add("Showers to A");
+                list.Add("A-Short -> Tele B");
+                list.Add("B-Short");
+                list.Add("B-Long");
+                list.Add("B-Long -> Tele A");
             }
             return list;
         }
@@ -348,6 +356,11 @@ namespace ValorantStratRoulette
                 list.Add(rifles[i]);
             }
 
+            for (int i = 0; i < snipers.Count; i++)
+            {
+                list.Add(snipers[i]);
+            }
+
             for (int i = 0; i < heavy.Count; i++)
             {
                 list.Add(heavy[i]);
@@ -382,6 +395,11 @@ namespace ValorantStratRoulette
             for (int i = 0; i < rifles.Count; i++)
             {
                 list.Add(rifles[i]);
+            }
+
+            for (int i = 0; i < snipers.Count; i++)
+            {
+                list.Add(snipers[i]);
             }
 
             for (int i = 0; i < heavy.Count; i++)
