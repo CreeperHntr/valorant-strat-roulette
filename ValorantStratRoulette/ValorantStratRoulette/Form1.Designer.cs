@@ -28,17 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.playerLabel = new System.Windows.Forms.Label();
             this.mapLabel = new System.Windows.Forms.Label();
             this.numOfPlayers = new System.Windows.Forms.ComboBox();
             this.mapSelected = new System.Windows.Forms.ComboBox();
             this.heroList = new System.Windows.Forms.CheckedListBox();
             this.heroListLabel = new System.Windows.Forms.Label();
-            this.weaponListLabel = new System.Windows.Forms.Label();
-            this.weaponsList = new System.Windows.Forms.CheckedListBox();
+            this.ablShLabel = new System.Windows.Forms.Label();
+            this.abilityShieldsList = new System.Windows.Forms.CheckedListBox();
             this.output = new System.Windows.Forms.TextBox();
             this.randomizeBtn = new System.Windows.Forms.Button();
             this.creditsBtn = new System.Windows.Forms.Button();
+            this.sidearmLabel = new System.Windows.Forms.Label();
+            this.sidearmsList = new System.Windows.Forms.CheckedListBox();
+            this.smgsLabel = new System.Windows.Forms.Label();
+            this.smgsList = new System.Windows.Forms.CheckedListBox();
+            this.shotgunList = new System.Windows.Forms.CheckedListBox();
+            this.sgLabel = new System.Windows.Forms.Label();
+            this.riflesList = new System.Windows.Forms.CheckedListBox();
+            this.riflesLabel = new System.Windows.Forms.Label();
+            this.sniperLabel = new System.Windows.Forms.Label();
+            this.sniperList = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.heavyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // playerLabel
@@ -108,8 +121,9 @@
             "Cypher",
             "Omen"});
             this.heroList.Location = new System.Drawing.Point(12, 125);
+            this.heroList.MultiColumn = true;
             this.heroList.Name = "heroList";
-            this.heroList.Size = new System.Drawing.Size(120, 214);
+            this.heroList.Size = new System.Drawing.Size(249, 130);
             this.heroList.TabIndex = 4;
             // 
             // heroListLabel
@@ -118,66 +132,55 @@
             this.heroListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.heroListLabel.Location = new System.Drawing.Point(8, 102);
             this.heroListLabel.Name = "heroListLabel";
-            this.heroListLabel.Size = new System.Drawing.Size(119, 20);
+            this.heroListLabel.Size = new System.Drawing.Size(65, 20);
             this.heroListLabel.TabIndex = 5;
-            this.heroListLabel.Text = "Enable Heroes:";
+            this.heroListLabel.Text = "Heroes:";
             // 
-            // weaponListLabel
+            // ablShLabel
             // 
-            this.weaponListLabel.AutoSize = true;
-            this.weaponListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaponListLabel.Location = new System.Drawing.Point(157, 102);
-            this.weaponListLabel.Name = "weaponListLabel";
-            this.weaponListLabel.Size = new System.Drawing.Size(135, 20);
-            this.weaponListLabel.TabIndex = 6;
-            this.weaponListLabel.Text = "Enable Weapons:";
+            this.ablShLabel.AutoSize = true;
+            this.ablShLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ablShLabel.Location = new System.Drawing.Point(283, 102);
+            this.ablShLabel.Name = "ablShLabel";
+            this.ablShLabel.Size = new System.Drawing.Size(127, 20);
+            this.ablShLabel.TabIndex = 6;
+            this.ablShLabel.Text = "Abilities/ Shields:";
             // 
-            // weaponsList
+            // abilityShieldsList
             // 
-            this.weaponsList.CheckOnClick = true;
-            this.weaponsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaponsList.FormattingEnabled = true;
-            this.weaponsList.Items.AddRange(new object[] {
-            "Shorty",
-            "Frenzy",
-            "Ghost",
-            "Sheriff",
-            "Stinger",
-            "Spectre",
-            "Bucky",
-            "Judge",
-            "Bulldog",
-            "Guardian",
-            "Phantom",
-            "Vandal",
-            "Marshal",
-            "Operator",
-            "Ares",
-            "Odin"});
-            this.weaponsList.Location = new System.Drawing.Point(161, 125);
-            this.weaponsList.MultiColumn = true;
-            this.weaponsList.Name = "weaponsList";
-            this.weaponsList.Size = new System.Drawing.Size(256, 214);
-            this.weaponsList.TabIndex = 7;
+            this.abilityShieldsList.CheckOnClick = true;
+            this.abilityShieldsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abilityShieldsList.FormattingEnabled = true;
+            this.abilityShieldsList.Items.AddRange(new object[] {
+            "Light Shields",
+            "Heavy Shields",
+            "Ability 1",
+            "Ability 2",
+            "Ability 3"});
+            this.abilityShieldsList.Location = new System.Drawing.Point(287, 125);
+            this.abilityShieldsList.MultiColumn = true;
+            this.abilityShieldsList.Name = "abilityShieldsList";
+            this.abilityShieldsList.Size = new System.Drawing.Size(131, 130);
+            this.abilityShieldsList.TabIndex = 7;
             // 
             // output
             // 
             this.output.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.output.Location = new System.Drawing.Point(433, 12);
+            this.output.Location = new System.Drawing.Point(470, 12);
             this.output.Multiline = true;
             this.output.Name = "output";
             this.output.ReadOnly = true;
             this.output.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.output.Size = new System.Drawing.Size(311, 390);
+            this.output.Size = new System.Drawing.Size(333, 474);
             this.output.TabIndex = 8;
             this.output.WordWrap = false;
             // 
             // randomizeBtn
             // 
             this.randomizeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.randomizeBtn.Location = new System.Drawing.Point(12, 355);
+            this.randomizeBtn.Location = new System.Drawing.Point(9, 439);
             this.randomizeBtn.Name = "randomizeBtn";
-            this.randomizeBtn.Size = new System.Drawing.Size(294, 47);
+            this.randomizeBtn.Size = new System.Drawing.Size(311, 47);
             this.randomizeBtn.TabIndex = 9;
             this.randomizeBtn.Text = "Randomize";
             this.randomizeBtn.UseVisualStyleBackColor = true;
@@ -186,24 +189,179 @@
             // creditsBtn
             // 
             this.creditsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creditsBtn.Location = new System.Drawing.Point(312, 355);
+            this.creditsBtn.Location = new System.Drawing.Point(326, 439);
             this.creditsBtn.Name = "creditsBtn";
-            this.creditsBtn.Size = new System.Drawing.Size(105, 47);
+            this.creditsBtn.Size = new System.Drawing.Size(135, 47);
             this.creditsBtn.TabIndex = 10;
             this.creditsBtn.Text = "Credits";
             this.creditsBtn.UseVisualStyleBackColor = true;
             this.creditsBtn.Click += new System.EventHandler(this.creditsBtn_Click);
             // 
+            // sidearmLabel
+            // 
+            this.sidearmLabel.AutoSize = true;
+            this.sidearmLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sidearmLabel.Location = new System.Drawing.Point(12, 275);
+            this.sidearmLabel.Name = "sidearmLabel";
+            this.sidearmLabel.Size = new System.Drawing.Size(80, 20);
+            this.sidearmLabel.TabIndex = 11;
+            this.sidearmLabel.Text = "Sidearms:";
+            // 
+            // sidearmsList
+            // 
+            this.sidearmsList.CheckOnClick = true;
+            this.sidearmsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sidearmsList.FormattingEnabled = true;
+            this.sidearmsList.Items.AddRange(new object[] {
+            "Classic",
+            "Shorty",
+            "Frenzy",
+            "Ghost",
+            "Sheriff"});
+            this.sidearmsList.Location = new System.Drawing.Point(12, 298);
+            this.sidearmsList.Name = "sidearmsList";
+            this.sidearmsList.Size = new System.Drawing.Size(100, 109);
+            this.sidearmsList.TabIndex = 12;
+            // 
+            // smgsLabel
+            // 
+            this.smgsLabel.AutoSize = true;
+            this.smgsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.smgsLabel.Location = new System.Drawing.Point(123, 275);
+            this.smgsLabel.Name = "smgsLabel";
+            this.smgsLabel.Size = new System.Drawing.Size(54, 20);
+            this.smgsLabel.TabIndex = 13;
+            this.smgsLabel.Text = "Smgs:";
+            // 
+            // smgsList
+            // 
+            this.smgsList.CheckOnClick = true;
+            this.smgsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.smgsList.FormattingEnabled = true;
+            this.smgsList.Items.AddRange(new object[] {
+            "Stinger",
+            "Spectre"});
+            this.smgsList.Location = new System.Drawing.Point(127, 298);
+            this.smgsList.Name = "smgsList";
+            this.smgsList.Size = new System.Drawing.Size(88, 46);
+            this.smgsList.TabIndex = 14;
+            // 
+            // shotgunList
+            // 
+            this.shotgunList.CheckOnClick = true;
+            this.shotgunList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shotgunList.FormattingEnabled = true;
+            this.shotgunList.Items.AddRange(new object[] {
+            "Stinger",
+            "Spectre"});
+            this.shotgunList.Location = new System.Drawing.Point(127, 370);
+            this.shotgunList.Name = "shotgunList";
+            this.shotgunList.Size = new System.Drawing.Size(88, 46);
+            this.shotgunList.TabIndex = 15;
+            // 
+            // sgLabel
+            // 
+            this.sgLabel.AutoSize = true;
+            this.sgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sgLabel.Location = new System.Drawing.Point(123, 347);
+            this.sgLabel.Name = "sgLabel";
+            this.sgLabel.Size = new System.Drawing.Size(82, 20);
+            this.sgLabel.TabIndex = 16;
+            this.sgLabel.Text = "Shotguns:";
+            // 
+            // riflesList
+            // 
+            this.riflesList.CheckOnClick = true;
+            this.riflesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.riflesList.FormattingEnabled = true;
+            this.riflesList.Items.AddRange(new object[] {
+            "Bulldog",
+            "Guardian",
+            "Phantom",
+            "Vandal"});
+            this.riflesList.Location = new System.Drawing.Point(242, 298);
+            this.riflesList.Name = "riflesList";
+            this.riflesList.Size = new System.Drawing.Size(100, 88);
+            this.riflesList.TabIndex = 17;
+            // 
+            // riflesLabel
+            // 
+            this.riflesLabel.AutoSize = true;
+            this.riflesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.riflesLabel.Location = new System.Drawing.Point(238, 275);
+            this.riflesLabel.Name = "riflesLabel";
+            this.riflesLabel.Size = new System.Drawing.Size(53, 20);
+            this.riflesLabel.TabIndex = 18;
+            this.riflesLabel.Text = "Rifles:";
+            // 
+            // sniperLabel
+            // 
+            this.sniperLabel.AutoSize = true;
+            this.sniperLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sniperLabel.Location = new System.Drawing.Point(353, 275);
+            this.sniperLabel.Name = "sniperLabel";
+            this.sniperLabel.Size = new System.Drawing.Size(67, 20);
+            this.sniperLabel.TabIndex = 19;
+            this.sniperLabel.Text = "Snipers:";
+            // 
+            // sniperList
+            // 
+            this.sniperList.CheckOnClick = true;
+            this.sniperList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sniperList.FormattingEnabled = true;
+            this.sniperList.Items.AddRange(new object[] {
+            "Marshal",
+            "Operator"});
+            this.sniperList.Location = new System.Drawing.Point(357, 298);
+            this.sniperList.Name = "sniperList";
+            this.sniperList.Size = new System.Drawing.Size(100, 46);
+            this.sniperList.TabIndex = 20;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Marshal",
+            "Operator"});
+            this.checkedListBox1.Location = new System.Drawing.Point(357, 370);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(100, 46);
+            this.checkedListBox1.TabIndex = 21;
+            // 
+            // heavyLabel
+            // 
+            this.heavyLabel.AutoSize = true;
+            this.heavyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.heavyLabel.Location = new System.Drawing.Point(353, 347);
+            this.heavyLabel.Name = "heavyLabel";
+            this.heavyLabel.Size = new System.Drawing.Size(57, 20);
+            this.heavyLabel.TabIndex = 22;
+            this.heavyLabel.Text = "Heavy:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 414);
+            this.ClientSize = new System.Drawing.Size(815, 505);
+            this.Controls.Add(this.heavyLabel);
+            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.sniperList);
+            this.Controls.Add(this.sniperLabel);
+            this.Controls.Add(this.riflesLabel);
+            this.Controls.Add(this.riflesList);
+            this.Controls.Add(this.sgLabel);
+            this.Controls.Add(this.shotgunList);
+            this.Controls.Add(this.smgsList);
+            this.Controls.Add(this.smgsLabel);
+            this.Controls.Add(this.sidearmsList);
+            this.Controls.Add(this.sidearmLabel);
             this.Controls.Add(this.creditsBtn);
             this.Controls.Add(this.randomizeBtn);
             this.Controls.Add(this.output);
-            this.Controls.Add(this.weaponsList);
-            this.Controls.Add(this.weaponListLabel);
+            this.Controls.Add(this.abilityShieldsList);
+            this.Controls.Add(this.ablShLabel);
             this.Controls.Add(this.heroListLabel);
             this.Controls.Add(this.heroList);
             this.Controls.Add(this.mapSelected);
@@ -211,6 +369,7 @@
             this.Controls.Add(this.mapLabel);
             this.Controls.Add(this.playerLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Valorant Strat Roulette";
@@ -227,11 +386,23 @@
         private System.Windows.Forms.ComboBox mapSelected;
         private System.Windows.Forms.CheckedListBox heroList;
         private System.Windows.Forms.Label heroListLabel;
-        private System.Windows.Forms.Label weaponListLabel;
-        private System.Windows.Forms.CheckedListBox weaponsList;
+        private System.Windows.Forms.Label ablShLabel;
+        private System.Windows.Forms.CheckedListBox abilityShieldsList;
         private System.Windows.Forms.TextBox output;
         private System.Windows.Forms.Button randomizeBtn;
         private System.Windows.Forms.Button creditsBtn;
+        private System.Windows.Forms.Label sidearmLabel;
+        private System.Windows.Forms.CheckedListBox sidearmsList;
+        private System.Windows.Forms.Label smgsLabel;
+        private System.Windows.Forms.CheckedListBox smgsList;
+        private System.Windows.Forms.CheckedListBox shotgunList;
+        private System.Windows.Forms.Label sgLabel;
+        private System.Windows.Forms.CheckedListBox riflesList;
+        private System.Windows.Forms.Label riflesLabel;
+        private System.Windows.Forms.Label sniperLabel;
+        private System.Windows.Forms.CheckedListBox sniperList;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label heavyLabel;
     }
 }
 

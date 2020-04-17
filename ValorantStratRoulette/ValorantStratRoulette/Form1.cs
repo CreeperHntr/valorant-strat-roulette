@@ -15,6 +15,11 @@ namespace ValorantStratRoulette
     public partial class Form1 : Form
     {
 
+        /// 
+        /// TODO
+        /// refactor weaponList to abilites/ shields
+
+
         List<String> weaponPool = new List<String>();
         List<String> heroPool = new List<String>();
         List<String> strats = new List<String>();
@@ -66,7 +71,7 @@ namespace ValorantStratRoulette
             }
 
             // adds the selected weapons to the weapon pool
-            weaponPool = GetSelectedItems(weaponsList);
+            weaponPool = GetSelectedItems(abilityShieldsList); /// this needs to be edited
 
             // sets the map to the selected map
             map = mapSelected.GetItemText(mapSelected.SelectedItem);
