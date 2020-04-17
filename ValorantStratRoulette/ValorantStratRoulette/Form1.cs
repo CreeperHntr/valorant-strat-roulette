@@ -164,13 +164,10 @@ namespace ValorantStratRoulette
 
         private void BuildOutput()
         {
-            for(int i = 0; i < 5; i++)
-            {
-                shuffledHeroPool = heroPool.OrderBy(x => random.Next()).ToList();
-                shuffledWeaponPool = weaponPool.OrderBy(x => random.Next()).ToList();
-                shuffledRoundOnePool = sidearmPool.OrderBy(x => random.Next()).ToList();
-                shuffledStratsPool = strats.OrderBy(x => random.Next()).ToList();
-            }
+            shuffledHeroPool = Randomize(heroPool);
+            shuffledWeaponPool = Randomize(weaponPool);
+            shuffledRoundOnePool = Randomize(sidearmPool);
+            shuffledStratsPool = Randomize(strats);
 
             outputList.Add("Selected Map: " + map);
 
@@ -193,7 +190,7 @@ namespace ValorantStratRoulette
             int stratIndex = 0;
             int r1Index = 0;
 
-            for(int i = 1; i < 27; i++)
+            for(int i = 1; i < 26; i++)
             {
                 
                 if(weaponIndex > shuffledWeaponPool.Count - 1)
@@ -321,5 +318,21 @@ namespace ValorantStratRoulette
             return list;
         }
 
+
+        /// -------------------------------------
+        /// 
+        /// Randomize()
+        /// 
+        /// Returns a list of all randomized 
+        /// input weapon pools
+        /// 
+        /// -------------------------------------
+
+        private List<String> Randomize(List<String> input)
+        {
+            List<String> list = new List<String>();
+            list = input.OrderBy(x => random.Next()).ToList();
+            return input;
+        }
     }
 }
