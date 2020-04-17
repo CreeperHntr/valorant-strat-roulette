@@ -117,8 +117,8 @@ namespace ValorantStratRoulette
             } 
             catch(Exception f)
             {
-                //MessageBox.Show("Some value was out of range.\nPlease try fixing your selection and randomize again.");
-                MessageBox.Show(f.ToString());
+                MessageBox.Show("Some value was out of range.\nPlease try fixing your selection and randomize again.");
+                //MessageBox.Show(f.ToString());
                 return;
             }
 
