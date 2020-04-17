@@ -211,7 +211,7 @@ namespace ValorantStratRoulette
                     r1Index = 0;
                 }
 
-                if(i == 1 || i == 14)
+                if(i == 1 || i == 13)
                 {
                     outputList.Add("Round " + i + ": " + shuffledRoundOnePool[r1Index] + ", " + shuffledStratsPool[stratIndex]);
                 } 
