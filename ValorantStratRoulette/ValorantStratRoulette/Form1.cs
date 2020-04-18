@@ -34,11 +34,6 @@ namespace ValorantStratRoulette
 
         List<String> outputList = new List<String>();
 
-        List<String> shuffledHeroPool = new List<String>();
-        List<String> shuffledWeaponPool = new List<String>();
-        List<String> shuffledRoundOnePool = new List<String>();
-        List<String> shuffledStratsPool = new List<String>();
-
         Random random = new Random();
 
         private int playerCount = 0;
@@ -58,10 +53,6 @@ namespace ValorantStratRoulette
             heroPool.Clear();
             weaponPool.Clear();
             strats.Clear();
-            shuffledHeroPool.Clear();
-            shuffledWeaponPool.Clear();
-            shuffledRoundOnePool.Clear();
-            shuffledStratsPool.Clear();
             outputList.Clear();
 
             sidearmPool.Clear();
@@ -178,31 +169,25 @@ namespace ValorantStratRoulette
 
         private void BuildOutput()
         {
-            // init randomization
-            shuffledHeroPool = heroPool.OrderBy(x => random.Next()).ToList();
-            shuffledWeaponPool = weaponPool.OrderBy(x => random.Next()).ToList();
-            shuffledRoundOnePool = sidearmPool.OrderBy(x => random.Next()).ToList();
-            shuffledStratsPool = strats.OrderBy(x => random.Next()).ToList();
-
-            for (int i = 0; i < 9; i++)
+            for(int i = 0; i < 9; i++)
             {
-                shuffledHeroPool = shuffledHeroPool.OrderBy(x => random.Next()).ToList();
-                shuffledWeaponPool = shuffledWeaponPool.OrderBy(x => random.Next()).ToList();
-                shuffledRoundOnePool = shuffledRoundOnePool.OrderBy(x => random.Next()).ToList();
-                shuffledStratsPool = shuffledStratsPool.OrderBy(x => random.Next()).ToList();
+                heroPool = heroPool.OrderBy(x => random.Next()).ToList();
+                weaponPool = weaponPool.OrderBy(x => random.Next()).ToList();
+                sidearmPool = sidearmPool.OrderBy(x => random.Next()).ToList();
+                strats = strats.OrderBy(x => random.Next()).ToList();
             }
 
             outputList.Add("Selected Map: " + map);
 
             outputList.Add("\r\n");
 
-            if(!(shuffledHeroPool.Count == 0))
+            if(!(heroPool.Count == 0))
             {
                 outputList.Add("Heroes:");
 
                 for (int i = 1; i < playerCount + 1; i++)
                 {
-                    outputList.Add("Player " + i + ": " + shuffledHeroPool[i - 1].ToString());
+                    outputList.Add("Player " + i + ": " + heroPool[i - 1].ToString());
                 }
                 outputList.Add("\r\n");
             }
@@ -216,17 +201,17 @@ namespace ValorantStratRoulette
             for(int i = 1; i < 26; i++)
             {
                 
-                if(weaponIndex > shuffledWeaponPool.Count - 1)
+                if(weaponIndex > weaponPool.Count - 1)
                 {
                     weaponIndex = 0;
                 }
 
-                if (stratIndex > shuffledStratsPool.Count - 1)
+                if (stratIndex > strats.Count - 1)
                 {
                     stratIndex = 0;
                 }
 
-                if(r1Index > shuffledRoundOnePool.Count - 1)
+                if(r1Index > sidearmPool.Count - 1)
                 {
                     r1Index = 0;
                 }
@@ -235,22 +220,22 @@ namespace ValorantStratRoulette
                 {
                     if (i == 1 || i == 13)
                     {
-                        outputList.Add("Round " + i + ": " + shuffledRoundOnePool[0] + ", " + shuffledStratsPool[stratIndex]);
+                        outputList.Add("Round " + i + ": " + sidearmPool[0] + ", " + strats[stratIndex]);
                     }
                     else
                     {
-                        outputList.Add("Round " + i + ": " + shuffledWeaponPool[weaponIndex] + ", " + shuffledStratsPool[stratIndex]);
+                        outputList.Add("Round " + i + ": " + weaponPool[weaponIndex] + ", " + strats[stratIndex]);
                     }
                 }
                 else
                 {
                     if (i == 1 || i == 13)
                     {
-                        outputList.Add("Round " + i + ": " + shuffledRoundOnePool[r1Index] + ", " + shuffledStratsPool[stratIndex]);
+                        outputList.Add("Round " + i + ": " + sidearmPool[r1Index] + ", " + strats[stratIndex]);
                     }
                     else
                     {
-                        outputList.Add("Round " + i + ": " + shuffledWeaponPool[weaponIndex] + ", " + shuffledStratsPool[stratIndex]);
+                        outputList.Add("Round " + i + ": " + weaponPool[weaponIndex] + ", " + strats[stratIndex]);
                     }
                 }
                 
