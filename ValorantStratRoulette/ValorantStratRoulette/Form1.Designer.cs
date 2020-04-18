@@ -252,8 +252,8 @@
             this.shotgunList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shotgunList.FormattingEnabled = true;
             this.shotgunList.Items.AddRange(new object[] {
-            "Bucky",
-            "Judge"});
+            "Stinger",
+            "Spectre"});
             this.shotgunList.Location = new System.Drawing.Point(127, 370);
             this.shotgunList.Name = "shotgunList";
             this.shotgunList.Size = new System.Drawing.Size(88, 46);
