@@ -169,6 +169,12 @@ namespace ValorantStratRoulette
 
         private void BuildOutput()
         {
+            // if user does not add any weapons, default all weapons to the Classic
+            if(weaponPool.Count == 0)
+            {
+                weaponPool.Add(sidearmPool[0]);
+            }
+
             for(int i = 0; i < 9; i++)
             {
                 heroPool = heroPool.OrderBy(x => random.Next()).ToList();
