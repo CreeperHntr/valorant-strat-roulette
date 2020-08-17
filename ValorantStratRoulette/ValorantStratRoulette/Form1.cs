@@ -103,9 +103,7 @@ namespace ValorantStratRoulette
             {
                 weaponPool = BuildFullWeaponPool(sidearmPool, smgPool, shotgunPool, riflePool, sniperPool, heavyPool);
             }
-
             
-
             // sets the map to the selected map
             map = mapSelected.GetItemText(mapSelected.SelectedItem);
 
@@ -244,9 +242,7 @@ namespace ValorantStratRoulette
                         outputList.Add("Round " + i + ": " + weaponPool[weaponIndex] + ", " + strats[stratIndex]);
                     }
                 }
-                
 
-                
                 weaponIndex++;
                 stratIndex++;
                 r1Index++;
